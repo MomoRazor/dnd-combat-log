@@ -5,7 +5,7 @@ interface Ability {
 }
 
 interface RollableAbility extends Ability {
-	diceRoll: DiceRoll; // The dice roll used for the ability, if applicable
+	diceRoll: string; // The dice roll used for the ability, if applicable
 }
 
 interface Spell extends RollableAbility {
@@ -18,8 +18,26 @@ interface Spell extends RollableAbility {
 	damageType: DamageType; // The type of damage the spell deals, if applicable
 }
 
-interface Abilities {
+interface AbilitiesInterface {
 	abilities: Ability[];
 	spells: Spell[];
 	rollableAbilities: RollableAbility[];
+}
+
+class Abilities implements AbilitiesInterface {
+	abilities: Ability[] = [];
+	spells: Spell[] = [];
+	rollableAbilities: RollableAbility[] = [];
+
+	constructor() {}
+
+	addAbility(ability: Ability) {
+		this.abilities.push(ability);
+	}
+	addSpell(spell: Spell) {
+		this.spells.push(spell);
+	}
+	addRollableAbility(rollableAbility: RollableAbility) {
+		this.rollableAbilities.push(rollableAbility);
+	}
 }

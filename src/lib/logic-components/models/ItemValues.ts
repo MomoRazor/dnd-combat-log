@@ -8,10 +8,24 @@ interface ListValue extends ListItem {
 	value: number;
 }
 
-interface ValueType {
+interface ValueTypeInterface {
 	name: string;
 	total: number;
 	components: ListValue[];
+}
+
+class ValueType implements ValueTypeInterface {
+	name: string;
+	total: number = this.getTotal();
+	components: ListValue[] = [];
+
+	constructor(name: string) {
+		this.name = name;
+	}
+
+	getTotal(): number {
+		return this.components.reduce((sum, item) => sum + item.value, 0);
+	}
 }
 
 interface DamageModifier extends ListItem {

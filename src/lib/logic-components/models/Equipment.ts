@@ -23,10 +23,17 @@ interface Armor extends EquipmentItem {
 	stealthDisadvantage: boolean;
 }
 
-interface Equipment {
+interface EquipmentInterface {
 	weapons: Weapon[];
 	armor: Armor[];
 	consumables: Consumable[];
+}
+
+class Equipment implements EquipmentInterface {
+	weapons: Weapon[] = [];
+	armor: Armor[] = [];
+	consumables: Consumable[] = [];
+	constructor() {}
 }
 
 type ArmorType = 'Light' | 'Medium' | 'Heavy' | 'Shield';
