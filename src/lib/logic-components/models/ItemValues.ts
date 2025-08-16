@@ -14,7 +14,7 @@ interface ValueTypeInterface {
 	components: ListValue[];
 }
 
-class ValueType implements ValueTypeInterface {
+export class ValueType implements ValueTypeInterface {
 	name: string;
 	total: number = this.getTotal();
 	components: ListValue[] = [];
@@ -28,14 +28,14 @@ class ValueType implements ValueTypeInterface {
 	}
 }
 
-interface DamageModifier extends ListItem {
+export interface DamageModifier extends ListItem {
 	resistance: DamageType;
 	condition: DamageModifierCondition;
 }
 
-type DamageModifierCondition = 'Resistance' | 'Weakness' | 'Immunity';
+export type DamageModifierCondition = 'Resistance' | 'Weakness' | 'Immunity';
 
-type DamageType =
+export type DamageType =
 	| 'Piercing'
 	| 'Slashing'
 	| 'Bludgeoning'

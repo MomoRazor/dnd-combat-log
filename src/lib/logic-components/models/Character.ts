@@ -1,3 +1,8 @@
+import { Abilities } from './Abilities';
+import type { Counter } from './Counter';
+import { Equipment } from './Equipment';
+import { ValueType, type DamageModifier } from './ItemValues';
+
 interface CharacterInterface {
 	AC: ValueType;
 	HP: ValueType;
@@ -10,13 +15,13 @@ interface CharacterInterface {
 	SCModifier: number;
 	SCAttackBonus: number;
 	SpellSaveDC: number;
-	CustomCounters: counter[];
+	CustomCounters: Counter[];
 	ActiveFeats: string[];
 	Equipment: Equipment;
 	Abilities: Abilities;
 }
 
-class Character implements CharacterInterface {
+export class Character implements CharacterInterface {
 	AC: ValueType = new ValueType('Armor Class');
 	HP: ValueType = new ValueType('Hit Points');
 	Speed: ValueType = new ValueType('Speed');
@@ -28,7 +33,7 @@ class Character implements CharacterInterface {
 	SCModifier: number = 0;
 	SCAttackBonus: number = this.getSCAttackBonus();
 	SpellSaveDC: number = this.getSpellSaveDC();
-	CustomCounters: counter[] = [];
+	CustomCounters: Counter[] = [];
 	ActiveFeats: string[] = [];
 	Equipment: Equipment = new Equipment();
 	Abilities: Abilities = new Abilities();

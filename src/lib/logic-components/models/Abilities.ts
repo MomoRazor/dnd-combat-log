@@ -1,3 +1,5 @@
+import type { DamageType } from './ItemValues';
+
 interface Ability {
 	id: string;
 	name: string;
@@ -24,7 +26,7 @@ interface AbilitiesInterface {
 	rollableAbilities: RollableAbility[];
 }
 
-class Abilities implements AbilitiesInterface {
+export class Abilities implements AbilitiesInterface {
 	abilities: Ability[] = [];
 	spells: Spell[] = [];
 	rollableAbilities: RollableAbility[] = [];

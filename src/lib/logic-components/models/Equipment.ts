@@ -1,3 +1,5 @@
+import type { DamageType, ValueType } from './ItemValues';
+
 interface Consumable {
 	id: string;
 	name: string;
@@ -29,7 +31,7 @@ interface EquipmentInterface {
 	consumables: Consumable[];
 }
 
-class Equipment implements EquipmentInterface {
+export class Equipment implements EquipmentInterface {
 	weapons: Weapon[] = [];
 	armor: Armor[] = [];
 	consumables: Consumable[] = [];
