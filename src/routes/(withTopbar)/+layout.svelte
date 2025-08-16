@@ -15,6 +15,6 @@
 </script>
 
 <SimpleTopbar {title} />
-<div style="padding-top: var(--topbar-mobile-height);">
+<div style="padding: 20px; padding-top: calc(var(--topbar-mobile-height) + 20px);">
 	{@render children()}
 </div>
