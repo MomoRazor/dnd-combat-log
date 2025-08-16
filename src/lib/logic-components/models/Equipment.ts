@@ -29,6 +29,13 @@ interface EquipmentInterface {
 	weapons: Weapon[];
 	armor: Armor[];
 	consumables: Consumable[];
+
+	addWeapon(weapon: Weapon): void;
+	addArmor(armor: Armor): void;
+	addConsumable(consumable: Consumable): void;
+	removeWeapon(weaponId: string): void;
+	removeArmor(armorId: string): void;
+	removeConsumable(consumableId: string): void;
 }
 
 export class Equipment implements EquipmentInterface {
@@ -36,6 +43,30 @@ export class Equipment implements EquipmentInterface {
 	armor: Armor[] = [];
 	consumables: Consumable[] = [];
 	constructor() {}
+
+	addWeapon(weapon: Weapon) {
+		this.weapons.push(weapon);
+	}
+
+	addArmor(armor: Armor) {
+		this.armor.push(armor);
+	}
+
+	addConsumable(consumable: Consumable) {
+		this.consumables.push(consumable);
+	}
+
+	removeWeapon(weaponId: string) {
+		this.weapons = this.weapons.filter((weapon) => weapon.id !== weaponId);
+	}
+
+	removeArmor(armorId: string) {
+		this.armor = this.armor.filter((armor) => armor.id !== armorId);
+	}
+
+	removeConsumable(consumableId: string) {
+		this.consumables = this.consumables.filter((consumable) => consumable.id !== consumableId);
+	}
 }
 
 type ArmorType = 'Light' | 'Medium' | 'Heavy' | 'Shield';

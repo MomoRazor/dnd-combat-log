@@ -7,6 +7,7 @@ interface CounterInterface {
 	defaultValue?: number; // Optional default value for the counter
 	increment(amount?: number): void;
 	decrement(amount?: number): void;
+	reset(): void;
 }
 
 export class Counter implements CounterInterface {
@@ -31,6 +32,14 @@ export class Counter implements CounterInterface {
 			this.value -= amount;
 		} else {
 			this.value = 0; // Prevent negative values
+		}
+	}
+
+	reset() {
+		if (this.defaultValue !== undefined) {
+			this.value = this.defaultValue;
+		} else {
+			this.value = 0; // Reset to zero if no default value is set
 		}
 	}
 }
