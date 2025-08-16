@@ -1,11 +1,16 @@
 <script lang="ts">
-	import favicon from '$lib/assets/favicon.svg';
+	import type { LayoutProps } from './$types';
+	import '../lib/visual-components/toolkit/default-hfl.css';
+	import '../lib/visual-components/project.css';
 
-	let { children } = $props();
+	const appName = 'DnD Combat Log';
+
+	let { children }: LayoutProps = $props();
 </script>
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
+	<title>{appName}</title>
+	<meta name="description" />
 </svelte:head>
 
-{@render children?.()}
+{@render children()}

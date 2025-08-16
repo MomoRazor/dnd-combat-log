@@ -1,0 +1,24 @@
+:root {
+	--topbar-mobile-height: 69px;
+	--border-color: #d3d3d3;
+}
+
+* {
+	scroll-behavior: smooth;
+}
+
+.basic-button {
+	margin: auto;
+	padding: 15px;
+	background-color: var(--primary-color);
+}
+
+.basic-input {
+	background-color: white;
+}
+
+.basic-hr {
+	width: 100%;
+	border: 0.2px solid var(--text-color);
+	margin: 15px 0 15px 0;
+}
