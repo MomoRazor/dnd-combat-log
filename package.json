@@ -16,8 +16,11 @@
 		"check-packages": "npx npm-check -u -E"
 	},
 	"devDependencies": {
+		"@types/uuid": "10.0.0",
 		"@eslint/compat": "1.3.2",
 		"@eslint/js": "9.33.0",
+		"@iconify-json/mdi": "1.2.3",
+		"@iconify/svelte": "5.0.0",
 		"@sveltejs/adapter-auto": "6.1.0",
 		"@sveltejs/kit": "2.31.0",
 		"@sveltejs/vite-plugin-svelte": "6.1.2",
@@ -31,11 +34,10 @@
 		"svelte-check": "4.3.1",
 		"typescript": "5.9.2",
 		"typescript-eslint": "8.39.1",
-		"vite": "7.1.2",
-		"@iconify/svelte": "5.0.0",
-		"@iconify-json/mdi": "1.2.3"
+		"vite": "7.1.2"
 	},
 	"dependencies": {
-		"unplugin-icons": "22.1.0"
+		"unplugin-icons": "22.1.0",
+		"uuid": "11.1.0"
 	}
 }
