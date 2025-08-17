@@ -5,6 +5,7 @@ interface ListItem {
 
 interface ListValue extends ListItem {
 	value: number;
+	turnsActive?: number; // Optional, used for counters that have a duration
 }
 
 interface ValueTypeInterface {
