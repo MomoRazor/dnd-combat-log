@@ -10,7 +10,7 @@ interface RollableAbility extends Ability {
 	diceRoll: string; // The dice roll used for the ability, if applicable
 }
 
-interface Spell extends RollableAbility {
+export interface Spell extends RollableAbility {
 	level: number;
 	castingTime: string; // e.g., '1 action', '1 bonus action'
 	range: string; // e.g., '60 feet', 'Touch'

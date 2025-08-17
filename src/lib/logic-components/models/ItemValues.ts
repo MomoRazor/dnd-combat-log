@@ -48,3 +48,20 @@ export type DamageType =
 	| 'Psychic'
 	| 'Radiant'
 	| 'Thunder';
+
+interface SpellLevelPointsInterface {
+	[spellLevel: number]: number; // Points associated with each spell level
+}
+
+export const SpellLevelPoints: SpellLevelPointsInterface = {
+	0: 0, // Cantrips
+	1: 2,
+	2: 3,
+	3: 5,
+	4: 6,
+	5: 7,
+	6: 9,
+	7: 10,
+	8: 11,
+	9: 13
+};

@@ -4,16 +4,29 @@ import type { Counter } from './Counter';
 import { Equipment } from './Equipment';
 import { ValueType, type DamageModifier } from './ItemValues';
 
-interface CharacterInterface {
-	ID: string; // Unique identifier for the character
-	Name: string; // Name of the character
+interface StatsInterface {
 	AC: ValueType;
 	HP: ValueType;
 	Speed: ValueType;
-	ProficiencyBonus: number;
 	DamageBonus: ValueType;
 	AttackBonus: ValueType;
 	DamageTypeModifiers: DamageModifier[];
+}
+
+export class Stats implements StatsInterface {
+	AC: ValueType = new ValueType('Armor Class');
+	HP: ValueType = new ValueType('Hit Points');
+	Speed: ValueType = new ValueType('Speed');
+	DamageBonus: ValueType = new ValueType('Damage Bonus');
+	AttackBonus: ValueType = new ValueType('Attack Bonus');
+	DamageTypeModifiers: DamageModifier[] = [];
+}
+
+interface CharacterInterface {
+	ID: string; // Unique identifier for the character
+	Name: string; // Name of the character
+	Stats: Stats; // Character stats
+	ProficiencyBonus: number;
 	SCPoints: number;
 	SCModifier: number;
 	SCAttackBonus: number;
@@ -27,13 +40,8 @@ interface CharacterInterface {
 export class Character implements CharacterInterface {
 	ID: string = uuidv4(); // Generate a unique ID for the character
 	Name: string;
-	AC: ValueType = new ValueType('Armor Class');
-	HP: ValueType = new ValueType('Hit Points');
-	Speed: ValueType = new ValueType('Speed');
+	Stats: Stats = new Stats();
 	ProficiencyBonus: number = 0;
-	DamageBonus: ValueType = new ValueType('Damage Bonus');
-	AttackBonus: ValueType = new ValueType('Attack Bonus');
-	DamageTypeModifiers: DamageModifier[] = [];
 	SCPoints: number = 0;
 	SCModifier: number = 0;
 	SCAttackBonus: number = this.getSCAttackBonus();
